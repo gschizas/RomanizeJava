@@ -22,9 +22,9 @@ public class Main {
         int cursor = 0;
         while (cursor < greekText.length()) {
             char letter = greekText.charAt(cursor);
-            char prev_letter = (cursor > 0) ? greekText.charAt(cursor - 1) : '\0';
-            char next_letter = (cursor < greekText.length() - 1) ? greekText.charAt(cursor + 1) : '\0';
-            char third_letter = (cursor < greekText.length() - 2) ? greekText.charAt(cursor + 2) : '\0';
+            char prev_letter = (cursor > 0) ? greekText.charAt(cursor - 1) : ' ';
+            char next_letter = (cursor < greekText.length() - 1) ? greekText.charAt(cursor + 1) : ' ';
+            char third_letter = (cursor < greekText.length() - 2) ? greekText.charAt(cursor + 2) : ' ';
             String newLetter = "";
             boolean is_upper = (Character.toUpperCase(letter) == letter);
             boolean is_upper2 = (Character.toUpperCase(next_letter) == next_letter);

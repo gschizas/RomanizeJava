@@ -33,18 +33,18 @@ public class Main {
             next_letter = Character.toLowerCase(next_letter);
             third_letter = Character.toLowerCase(third_letter);
 
-            if (simple_translation_greek.indexOf(letter) > 0) {
+            if (simple_translation_greek.indexOf(letter) >= 0) {
                 newLetter = "" + simple_translation_latin.charAt(simple_translation_greek.indexOf(letter));
-            } else if (digraph_translation_greek.indexOf(letter) > 0) {
+            } else if (digraph_translation_greek.indexOf(letter) >= 0) {
                 int diphthong_index = digraph_translation_greek.indexOf(letter);
                 newLetter = digraph_translation_latin.substring(diphthong_index * 2, diphthong_index * 2 + 2);
-            } else if (digraph_ypsilon_greek.indexOf(letter) > 0) {
+            } else if (digraph_ypsilon_greek.indexOf(letter) >= 0) {
                 newLetter = "" + digraph_ypsilon_latin.charAt(digraph_ypsilon_greek.indexOf(letter));
-                if ("υύ".indexOf(next_letter) > 0) {
-                    if (digraph_ypsilon_beta.indexOf(third_letter) > 0) {
+                if ("υύ".indexOf(next_letter) >= 0) {
+                    if (digraph_ypsilon_beta.indexOf(third_letter) >= 0) {
                         newLetter += "v";
                         cursor++;
-                    } else if (digraph_ypsilon_phi.indexOf(third_letter) > 0) {
+                    } else if (digraph_ypsilon_phi.indexOf(third_letter) >= 0) {
                         newLetter += "f";
                         cursor++;
                     }
@@ -76,7 +76,7 @@ public class Main {
                 }
             } else if (letter == 'ο') {
                 newLetter = "o";
-                if ("υύ".indexOf(next_letter) > 0) {
+                if ("υύ".indexOf(next_letter) >= 0) {
                     newLetter += "u";
                     cursor += 1;
                 }
@@ -112,5 +112,6 @@ public class Main {
         assert Romanize("παπα").equals("papa");
         assert Romanize("πάπά").equals("papa");
         assert Romanize("α").equals("a");
+        assert Romanize("ά").equals("a");
     }
 }

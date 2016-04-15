@@ -108,5 +108,9 @@ public class Main {
         assert Romanize("Ούτε το αγγούρι ούτε η αγκινάρα γράφονται με γξ").equals("Oute to angouri oute i agkinara grafontai me nx");
         assert Romanize("ΟΥΡΑΝΟΣ Ουρανός ουρανός οϋρανός").equals("OURANOS Ouranos ouranos oyranos");
         assert Romanize("Έχω ελέγξει το 100% της μεθόδου").equals("Echo elenxei to 100% tis methodou");
+        assert Romanize("παπά").equals("papa");
+        assert Romanize("παπα").equals("papa");
+        assert Romanize("πάπά").equals("papa");
+        assert Romanize("α").equals("a");
     }
 }
